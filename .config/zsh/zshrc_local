@@ -1,0 +1,42 @@
+source $HOME/.config/_shell/env
+source $XDG_CONFIG_HOME/_shell/aliases
+
+if [ -f "$XDG_CONFIG_HOME/zsh/env" ]; then
+    source $XDG_CONFIG_HOME/zsh/env
+fi
+if [ -f "$XDG_CONFIG_HOME/zsh/aliases" ]; then
+    source $XDG_CONFIG_HOME/zsh/aliases
+fi
+
+
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000                   # Maximum events in history file
+
+
+#if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+#  eval "$(oh-my-posh init zsh)"
+#fi
+if (( $+commands[oh-my-posh] )); then
+    eval "$(oh-my-posh init zsh --config "$XDG_CONFIG_HOME/oh-my-posh/pm-blu-omp.json")"
+fi
+
+## 1. Initialize zsh completion 
+# -U it doesn’t expand aliases
+# -z some zsh safe option
+autoload -Uz compinit
+compinit
+
+#_comp_options+=(globdots) # With hidden files
+#source $XDG_CONFIG_HOME/zsh/completion.zsh
+
+# 2. Appearance & Behavior
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+#zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# 3. Organization
+zstyle ':completion:*:descriptions' format '%B-- %d --%b'
+zstyle ':completion:*' group-name ''
+
+

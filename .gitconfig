@@ -1,10 +1,13 @@
 [user]
 	name = Peter Marko
 	email = 40757147+pmarko1711@users.noreply.github.com
-[credential]
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
+[includeIf "gitdir:/Users/"]
+    path = ~/.config/git/gitconfig-mac
+[includeIf "gitdir:/home/"]
+    path = ~/.config/git/gitconfig-linux
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [init]
 	defaultBranch = main
+[include]
+    path = ~/.gitconfig.local

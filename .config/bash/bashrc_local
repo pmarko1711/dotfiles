@@ -1,0 +1,9 @@
+source $HOME/.config/_shell/env
+source $XDG_CONFIG_HOME/_shell/aliases
+
+if [ -f "$XDG_CONFIG_HOME/bash/env" ]; then
+    source $XDG_CONFIG_HOME/bash/env
+fi
+if [ -f "$XDG_CONFIG_HOME/bash/aliases" ]; then
+    source $XDG_CONFIG_HOME/bash/aliases
+fi

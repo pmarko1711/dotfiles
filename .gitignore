@@ -5,4 +5,13 @@
 
 !.gitconfig
 !.gitignore
+#
+.gitconfig.local
 
+!.config/_shell/**
+!.config/bash/**
+!.config/zsh/**
+!.config/install_bash.sh
+!.config/install_zsh.sh
+!.config/vim/**
+!.config/oh-my-posh/**
