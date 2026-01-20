@@ -5,6 +5,9 @@
 
 !.gitconfig
 !.gitignore
+!.README.md
+!install.sh
+
 #
 .gitconfig.local
 
@@ -15,3 +18,6 @@
 !.config/install_zsh.sh
 !.config/vim/**
 !.config/oh-my-posh/**
+
+.env
+.env_secret

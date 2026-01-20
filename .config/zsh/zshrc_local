@@ -20,7 +20,11 @@ if (( $+commands[oh-my-posh] )); then
     eval "$(oh-my-posh init zsh --config "$XDG_CONFIG_HOME/oh-my-posh/pm-blu-omp.json")"
 fi
 
-## 1. Initialize zsh completion 
+# 1. Shell Plugins
+[ -f "$XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[ -f "$XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "$XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+## 2. Initialize zsh completion 
 # -U it doesn’t expand aliases
 # -z some zsh safe option
 autoload -Uz compinit

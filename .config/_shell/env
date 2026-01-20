@@ -14,3 +14,11 @@ export VIMINIT='source $XDG_CONFIG_HOME/vim/.vimrc'
 # if [[ "$OSTYPE" == "darwin"* ]]; then
 #     [ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 # fi
+
+if [ -f "$HOME/.env_secret" ]; then
+    source $HOME/.env_secret
+fi
+
+if [ -f "$HOME/.env" ]; then
+    source $HOME/.env
+fi
