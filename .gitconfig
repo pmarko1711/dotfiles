@@ -5,6 +5,8 @@
     path = ~/.config/git/gitconfig-mac
 [includeIf "gitdir:/home/"]
     path = ~/.config/git/gitconfig-linux
+[includeIf "gitdir:/root/"]
+    path = ~/.config/git/gitconfig-linux
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [init]
